@@ -1,1 +1,1 @@
-web: gunicorn capstone.wsgi --log-file -
+web: gunicorn --bind=0.0.0.0 --timeout 600 capstone.wsgi --log-file -
