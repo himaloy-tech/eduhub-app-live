@@ -21,10 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6(e)v-x)x9rz-7xr%p@#2350!+cc=murv2t&dldy1--&4m$#dl'
+from secret_settings import *
+SECRET_KEY = key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['eduhub-app-live.herokuapp.com', '127.0.0.1']
 
@@ -38,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'eduHub'
+    'eduHub',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MESSAGE_TAGS = {
     messages.ERROR: "danger"
 }
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+# S3 Bucket
+AWS_ACCESS_KEY_ID = access_key_id
+AWS_SECRET_ACCESS_KEY = secret_access_key
+AWS_STORAGE_BUCKET_NAME = bucket_name
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
