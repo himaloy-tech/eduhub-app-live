@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '6(e)v-x)x9rz-7xr%p@#2350!+cc=murv2t&dldy1--&4m$#dl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['eduhub-app-live.herokuapp.com', '127.0.0.1']
 
