@@ -43,6 +43,7 @@ def register(request):
     else:
         return render(request, "register.html")
 
+@login_required(login_url='/login')
 def contact(request):
     if request.method == "POST":
         name = request.POST.get('name')
