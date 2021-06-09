@@ -21,8 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-from secret_settings import *
-SECRET_KEY = key
+SECRET_KEY = '6(e)v-x)x9rz-7xr%p@#2350!+cc=murv2t&dldy1--&4m$#dl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -135,9 +134,9 @@ MESSAGE_TAGS = {
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # S3 Bucket
-AWS_ACCESS_KEY_ID = access_key_id
-AWS_SECRET_ACCESS_KEY = secret_access_key
-AWS_STORAGE_BUCKET_NAME = bucket_name
+AWS_ACCESS_KEY_ID = 'AKIA3MFB2VYKA7GDLAPN'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'eduhub-app-s3'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
