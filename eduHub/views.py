@@ -41,6 +41,7 @@ def register(request):
             user.save()
         except:
             messages.error(request, f'Username <b>{username}</b> already exists.')
+            HttpResponseRedirect(request.META.get('HTTP_REFERER'))
         auth_login(request, user)
         return HttpResponseRedirect(reverse("index"))
     else:
